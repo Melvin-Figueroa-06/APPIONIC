@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="uploadPhoto(title, description)">
+    <ion-item lines="full">
+      <ion-label position="floating"></ion-label>
+      <ion-input type="text"
+                 class="form-control" 
+                 placeholder="Photo's Tiltle"
+                 required 
+                 #title></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating"></ion-label>
+      <ion-input  textarea rows="2" 
+                  class="form-control" 
+                  placeholder="Photo's Description" 
+                  required 
+                  #description></ion-input>
+    </ion-item>
+    
+      <ion-item>
+
+        <img [src]="photoSelected || 'assets/no-image.png'" class="img-fluid" alt="No Image" (click)="photoInput.click()">
+        <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+
+ 
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full"  type="submit" color="danger" expand="block">Upload</ion-button>
+        </ion-col>
+      </ion-row>
+         
+    </form>
+ </ion-content>

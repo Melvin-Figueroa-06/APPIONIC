@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="AddPro()">
+    <ion-item lines="full">
+      <ion-label position="floating">title</ion-label>
+      <ion-input type="text"
+                 [(ngModel)]="product.title"
+                 name="title" 
+                 class="form-control" 
+                 required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+    
+      <img [src]="photoSelected || 'assets/no-image.png'" class="img-fluid" alt="No Image" (click)="photoInput.click()">
+      <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+
+
+    </ion-item>
+
+
+    <ion-item lines="full">
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number"
+                 [(ngModel)]="product.price"
+                 name="price" 
+                 class="form-control"  
+                 required></ion-input>
+    </ion-item>
+
+
+    <ion-item lines="full">
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input  type="text"
+                  [(ngModel)]="product.quantity" 
+                  name="quantity" 
+                  class="form-control" 
+                  required></ion-input>
+    </ion-item>
+
+
+    <ion-item lines="full">
+      <ion-label position="floating">Categoria</ion-label>
+      <ion-input type="text"
+                 [(ngModel)]="product.category"
+                 name="category" 
+                 class="form-control"
+                 required
+                 ></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input type="text"
+                 [(ngModel)]="product.description"
+                 name="description" 
+                 class="form-control"  
+                 required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full"  type="submit" color="danger" expand="block">REGISTRAR</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

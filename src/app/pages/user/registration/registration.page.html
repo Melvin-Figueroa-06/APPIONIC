@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="SignUp()">
+    <ion-item lines="full">
+      <ion-label position="floating">name</ion-label>
+      <ion-input type="text"
+                 [(ngModel)]="user.name" 
+                 name="name" 
+                 class="form-control" 
+                 required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input  type="email" 
+                  [(ngModel)]="user.email" 
+                  name="email"
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
+                  class="form-control"  
+                  required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password"
+                 [(ngModel)]="user.password" 
+                 name="password" 
+                 class="form-control"  
+                 required></ion-input>
+    </ion-item>
+
+
+    <ion-item lines="full">
+      <ion-label position="floating">Age</ion-label>
+      <ion-input  type="text" 
+                  [(ngModel)]="user.age" 
+                  name="age" 
+                  class="form-control" 
+                  required></ion-input>
+    </ion-item>
+
+
+    <ion-item lines="full">
+      <ion-label position="floating">Sex</ion-label>
+      <ion-input type="text" [(ngModel)]="user.sex" name="sex" class="form-control"  required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full"  type="submit" color="danger" expand="block">SIGN UP</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
