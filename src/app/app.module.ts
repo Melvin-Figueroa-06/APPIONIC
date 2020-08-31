@@ -53,7 +53,7 @@ export function jwtOptionsFactory(storage){
       multi: true
 
     }
-  ],
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

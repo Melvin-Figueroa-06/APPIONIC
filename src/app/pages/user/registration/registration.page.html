@@ -1,64 +1,94 @@
-<ion-header>
+
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Register</ion-title>
   </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <form (submit)="SignUp()">
-    <ion-item lines="full">
-      <ion-label position="floating">name</ion-label>
-      <ion-input type="text"
-                 [(ngModel)]="user.name" 
-                 name="name" 
-                 class="form-control" 
-                 required
-      ></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input  type="email" 
-                  [(ngModel)]="user.email" 
-                  name="email"
-                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" 
-                  class="form-control"  
-                  required
-      ></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password"
-                 [(ngModel)]="user.password" 
-                 name="password" 
-                 class="form-control"  
-                 required></ion-input>
-    </ion-item>
 
 
-    <ion-item lines="full">
-      <ion-label position="floating">Age</ion-label>
-      <ion-input  type="text" 
-                  [(ngModel)]="user.age" 
-                  name="age" 
-                  class="form-control" 
-                  required></ion-input>
-    </ion-item>
+<ion-content fullscreen>
+  <div class="ion-padding">
+    <ion-card class="ion-padding">
+      <form [formGroup]="registrationForm" (submit)="SignUp()">
+        <ion-item lines="full">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input formControlName="name"
+                     autocapitalize
+                     inputmode="text"
+
+          ></ion-input>
+       
+        </ion-item>
+        <div *ngFor="let error of errorMessages.name">
+          <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">      
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+        <ion-item lines="full">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input  formControlName="email"
+          autocapitalize inputmode="email" type="email" 
+                      
+          ></ion-input>
+        </ion-item>
+    
+        <div *ngFor="let error of errorMessages.email">
+          <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">      
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input formControlName="password" 
+                    ></ion-input>
+        </ion-item>
+    
+        <div *ngFor="let error of errorMessages.password">
+          <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">      
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Age</ion-label>
+          <ion-input  formControlName="age"
+                      ></ion-input>
+        </ion-item>
+    
+        <div *ngFor="let error of errorMessages.age">
+          <ng-container *ngIf="age.hasError(error.type) && (age.dirty || age.touched)">      
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
 
 
-    <ion-item lines="full">
-      <ion-label position="floating">Sex</ion-label>
-      <ion-input type="text" [(ngModel)]="user.sex" name="sex" class="form-control"  required></ion-input>
-    </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating">Sex</ion-label>
+          <ion-input formControlName="sex"
+                      
+                    ></ion-input>
+        </ion-item>
+    
+        <div *ngFor="let error of errorMessages.sex">
+          <ng-container *ngIf="sex.hasError(error.type) && (sex.dirty || sex.touched)">      
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
 
-    <ion-row>
-      <ion-col>
-        <ion-button expand="full"  type="submit" color="danger" expand="block">SIGN UP</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+
+        <ion-row>
+          <ion-col>
+            <ion-button  [disabled]= "!registrationForm.valid" 
+                        type="submit" 
+                        color="danger" 
+                        expand="block">SIGN UP
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card>
+  </div>
+  
 </ion-content>

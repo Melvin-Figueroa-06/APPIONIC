@@ -1,3 +1,61 @@
+//--------------------------
+//gogle.fonts
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+ion-card, ion-button, ion-title {
+    font-family: 'Staatliches';
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+ion-toolbar {
+    --opacity: 0;
+    color: #fff;
+}
+
+
+ion-content {
+
+    --background: linear-gradient(160deg, rgba(127,183,255,1) 0%,
+                                        rgba(127,183,255,1) 50%,
+                                        rgba(117,50,218,1) 100%);
+
+    ion-card {
+        margin-top: 150px;
+        border-radius: 28px;
+        text-align: left;
+        --color: #222;
+
+        ion-card-content{
+            h2{
+                font-size: 54px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            ion-button {
+                --color: #222;
+                --box-shadow: none;
+            }
+        }
+    }
+}
+
+ion-card {
+    background: linear-gradient(160deg, rgba(255,255,255,1) 0%,
+                                        rgba(255,255,255,1) 50%,
+                                        rgba(255,255,255,1) 100%);
+  
+    ion-button {
+        --background: linear-gradient(90deg, rgba(127,183,255,1) 0%,
+                                             rgba(255,255,255,1) 50%,
+                                             rgba(255,255,255,1) 100%);
+    }
+}
+
+
+//------------------------------------------
 .divider {
     display: flex;
     

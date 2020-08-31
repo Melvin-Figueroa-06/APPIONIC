@@ -1,23 +1,27 @@
-<ion-header>
+
   <ion-toolbar>
     <ion-title>
       Inicio de Login
     </ion-title>
   </ion-toolbar>
-</ion-header>
 
-<ion-content class="auth-form">
-  <ion-grid>
-    <ion-row>
-      <ion-col align-self-center>
-        <ion-button [routerLink]="['/registration']" expand="block" color="primary">Register</ion-button>
 
-        <span class="divider line one-line">or</span>
-
-        <span class="already">Already a user?</span>
-
-        <ion-button [routerLink]="['/login']" expand="block" color="danger">Sign In</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content fullscreen class="auth-form">
+ <div class="ion-padding">
+    <ion-card class="ion-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col align-self-center>
+            <ion-button shape="round" [routerLink]="['/registration']" expand="block" color="primary">Register</ion-button>
+    
+            <span class="divider line one-line">or</span>
+    
+            <span class="already">Already a user?</span>
+    
+            <ion-button shape="round" [routerLink]="['/login']" expand="block" color="danger">Sign In</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
 </ion-content>

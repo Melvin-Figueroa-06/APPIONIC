@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'homeuser',
+    redirectTo: 'index',
     pathMatch: 'full'
   },
   {
@@ -71,6 +71,20 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./pages/pro-products/list/list.module').then( m => m.ListPageModule)
   },
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'index',
+    loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule)
+  },
+ 
+  
   
  
  
