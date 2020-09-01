@@ -83,6 +83,10 @@ const routes: Routes = [
     path: 'index',
     loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule)
   },
+  {
+    path: 'chatpage/:userId',
+    loadChildren: () => import('./pages/chat/chatpage/chatpage.module').then(m => m.ChatpagePageModule)
+  },
  
   
   

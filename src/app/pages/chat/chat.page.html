@@ -5,25 +5,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      Hola desde ESAT
-    </ion-item>
-    <ion-item>
-      Desde el curso Angular + Ionic
-    </ion-item>
-    <ion-item>
-      Aprendiendo Ionic
+  <ion-input [(ngModel)]="username" placeholder="Enter username" *ngIf="!hideInput">
+
+  </ion-input>
+  <ion-button *ngIf="!hideInput" (click)="hideInputField()">
+    Submit
+  </ion-button>
+  <ion-list *ngIf="hideInput">
+    <ion-item button *ngFor="let contact of contacts" routerLink="/chatpage/{{contact.name}}">
+      <ion-avatar>
+        <ion-img [src]="contact.imgUri"></ion-img>
+      </ion-avatar>
+      {{ contact.name }}
     </ion-item>
   </ion-list>
 
-
-  <ion-footer-bar keyboard-attach class="bar-dark item-input-inset">
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Escribir mensaje">
-    </label>
-    <button class="button button-clear">Enviar</button>
-  </ion-footer-bar>
+ 
 </ion-content>
 
 

@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 
+import { SocketService } from './services/socket.service';
 
 export function jwtOptionsFactory(storage){
   return {
@@ -46,6 +47,7 @@ export function jwtOptionsFactory(storage){
     AuthGuard,
     StatusBar,
     SplashScreen,
+    SocketService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {
       provide: HTTP_INTERCEPTORS,
