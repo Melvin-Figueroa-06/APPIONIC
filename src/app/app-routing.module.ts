@@ -76,24 +76,22 @@ const routes: Routes = [
     loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
   },
   {
-    path: 'chat',
-    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
-  },
-  {
     path: 'index',
     loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule)
   },
   {
-    path: 'chatpage/:userId',
-    loadChildren: () => import('./pages/chat/chatpage/chatpage.module').then(m => m.ChatpagePageModule)
+    path: 'homechat',
+    loadChildren: () => import('./pages/chat/homechat/homechat.module').then( m => m.HomechatPageModule)
   },
- 
-  
-  
- 
- 
- 
-  
+  {
+    path: 'profil',
+    loadChildren: () => import('./pages/chat/profil/profil.module').then( m => m.ProfilPageModule)
+  },
+  {
+    path: 'chat/:id',
+    loadChildren: () => import('./pages/chat/chat/chat.module').then( m => m.ChatPageModule)
+  },
+
 ];
 
 @NgModule({

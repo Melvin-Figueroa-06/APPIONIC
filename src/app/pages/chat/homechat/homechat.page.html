@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar *ngIf="!searchbar" color="secondary">
+    <ion-title color="light"><b>ChatApp</b></ion-title>
+    <ion-buttons slot="end">
+      <ion-icon color="light" size="large" name="search-sharp" (click)="searchbar = true"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon color="light" (click)="openProfile()" size="large" name="person-circle-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="searchbar">
+    <ion-searchbar placeholder="Search..." (ionCancel)="searchbar = false" [debounce]="250" showCancelButton="always">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list no-padding>
+    <ion-item *ngFor="let chat of chatData" routerLink="/chat/{{ chat.id }}" routerDirection="forward">
+      <ion-avatar class="chatImage" slot="start">
+        <ion-img [src]="chat.image"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <div class="withcount">
+          <div class="nameAvatar">
+            <h2 color="light">{{chat.name}}
+            </h2>
+            <ion-avatar class="chatCount" *ngIf="chat.count">{{chat.count}}</ion-avatar>
+          </div>
+
+          <div class="timeEnd">
+            <ion-text slot="end" color="dark">{{chat.time}}</ion-text>
+          </div>
+        </div>
+        <p class="widthHalf">{{chat.description}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+  
+   
+
+

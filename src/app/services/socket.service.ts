@@ -11,7 +11,7 @@ export class SocketService {
    
   }
   initialize(){
-    this.socket = io('http://localhost:8000/v1.0/api/chat');
+    //this.socket = io('http://localhost:8000/v1.0/api/chat');
   }
 
   online(username){
