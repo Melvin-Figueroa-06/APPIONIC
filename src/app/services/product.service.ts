@@ -4,28 +4,35 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import {  BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { Product } from '../interfaces/Product';
 
 
+const URL = 'http://localhost:8000/v1.0/api/producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  private URL = 'http://localhost:8000/v1.0/api'
+ // URL = 'http://localhost:8000/v1.0/api'
+   
 
   constructor(
     private http: HttpClient,
     private router: Router
   ) { }
 
-  AddPro(product){
+  /*AddPro(product){
     return this.http.post<any>(this.URL + '/producto', product);
+  }*/
+
+
+  getProducts(){
+    return this.http.get(URL);
   }
 
-
-  getPro(){
-    return this.http.get<any>(this.URL + '/producto');
+  getProduct(id) {
+    return this.http.get('${URL}/${id}');
   }
 }
 

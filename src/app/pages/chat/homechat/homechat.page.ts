@@ -13,7 +13,7 @@ export class HomechatPage implements OnInit {
     image: '../../assets/chat/chat1.jpg',
     // tslint:disable-next-line:max-line-length
     description: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim laboriosam sunt nulla minima ratione, pariatur quaerat aut ex a ullam? Officia, explicabo optio. Dolores, ab exercitationem? Neque illo soluta sapiente!',
-    count: '2',
+    count: '5',
     time: '12:17'
   }, {
     id: '12edd', name: 'Oliver',

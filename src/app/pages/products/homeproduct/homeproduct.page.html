@@ -10,8 +10,8 @@
   <div class="ion-padding">
     <ion-card class="ion-padding">
       <ion-row>
-        <ion-card class="card card-photo" style="width: 40%;" *ngFor="let product of products">
-           <ion-img [src]=""></ion-img>
+        <ion-card class="card card-product" style="width: 40%;" *ngFor="let product of products" (click)="selectedCart(product._id)">
+           <ion-img [src]="'http://localhost:8000/v1.0/api' + product.imagePath" class="img-card-top w-100"></ion-img>
            <ion-card-header>
              <ion-card-title>{{product.category}}</ion-card-title> </ion-card-header>
               <ion-card-subtitle>{{product.description}}</ion-card-subtitle>
@@ -19,4 +19,5 @@
       </ion-row>
     </ion-card>
   </div>
+
 </ion-content>

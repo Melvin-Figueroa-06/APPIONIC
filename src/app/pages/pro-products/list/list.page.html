@@ -6,8 +6,8 @@
 
 <ion-content>
 
-    <ion-row >
-      <ion-card class="card card-photo" style="width: 40%;" *ngFor="let photo of photos"
+    <ion-row>
+      <ion-card  class="card card-photo" style="width: 40%;" *ngFor="let photo of photos"
       (click)="selectedCart(photo._id)">
         <ion-img [src]="'http://localhost:4000/' + photo.imagePath" class="img-card-top w-100"></ion-img>
            <ion-card-header>

@@ -15,18 +15,13 @@ export class HomeproductPage implements OnInit {
 
   products = [];
 
-  constructor(private productService: ProductService,
+  constructor(
+    private productService: ProductService,
     private router: Router) { }
 
   ngOnInit() {
-    this.productService.getPro()
-    .subscribe(
-      res => {
-        this.products = res;
-      },
-        err => console.log(err)
-    )
- 
+    
+     
   }
 
 

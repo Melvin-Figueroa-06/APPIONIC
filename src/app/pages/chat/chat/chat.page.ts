@@ -142,7 +142,7 @@ export class ChatPage implements OnInit {
         userName: this.User,
         userAvatar: 'assets/driver.jpeg',
         time: '12:01 pm',
-        message: 'Wow, that\'s so cool. Hats off to the developers. This is gooood stuff',
+        message: 'Wow, that\'s so cool. Hats off to the developers. This is good stuff',
         upertext: 'How r u '
       },
       {

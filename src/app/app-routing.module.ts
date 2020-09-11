@@ -91,6 +91,14 @@ const routes: Routes = [
     path: 'chat/:id',
     loadChildren: () => import('./pages/chat/chat/chat.module').then( m => m.ChatPageModule)
   },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./pages/orders/checkout/checkout.module').then( m => m.CheckoutPageModule)
+  },
+  {
+    path: 'location',
+    loadChildren: () => import('./pages/user/location/location.module').then( m => m.LocationPageModule)
+  },
 
 ];
 
