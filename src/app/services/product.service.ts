@@ -14,7 +14,7 @@ const URL = 'http://localhost:8000/v1.0/api/producto';
 })
 export class ProductService {
 
- // URL = 'http://localhost:8000/v1.0/api'
+  URL = 'http://localhost:8000/v1.0/api'
    
 
   constructor(
@@ -22,9 +22,9 @@ export class ProductService {
     private router: Router
   ) { }
 
-  /*AddPro(product){
+  AddPro(product){
     return this.http.post<any>(this.URL + '/producto', product);
-  }*/
+  }
 
 
   getProducts(){

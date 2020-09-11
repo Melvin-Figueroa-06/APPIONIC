@@ -72,10 +72,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/pro-products/list/list.module').then( m => m.ListPageModule)
   },
   {
-    path: 'admin-dashboard',
-    loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
-  },
-  {
     path: 'index',
     loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule)
   },
@@ -98,6 +94,10 @@ const routes: Routes = [
   {
     path: 'location',
     loadChildren: () => import('./pages/user/location/location.module').then( m => m.LocationPageModule)
+  },
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./pages_admin/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardPageModule)
   },
 
 ];
